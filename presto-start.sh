@@ -12,7 +12,7 @@ echo "is_coordinator ? $is_coordinator"
 
 TMP_DIR=/tmp/presto
 INSTALL_DIR=/opt/presto
-PRESTOTAR="presto-server-0.133-SNAPSHOT.tar.gz"
+PRESTOTAR="presto-server-0.137-SNAPSHOT.tar.gz"
 PRESTOVER=`basename $PRESTOTAR .tar.gz`
 HADOOPLZOJAR="hadoop-lzo-0.4.20-SNAPSHOT.jar"
 
