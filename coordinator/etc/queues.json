@@ -1,0 +1,20 @@
+{
+  "queues": {
+    "user.${USER}": {
+      "maxConcurrent": 5,
+      "maxQueued": 10
+    },
+    "global": {
+      "maxConcurrent": 50,
+      "maxQueued": 100
+    }
+  },
+  "rules": [
+    {
+      "queues": [
+        "user.${USER}",
+        "global"
+      ]
+    }
+  ]
+}
