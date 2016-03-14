@@ -45,6 +45,7 @@ NODEID=$HOSTNAME
 PRESTOLOG="/var/log/presto"
 
 mkdir -p $PRESTOLOG
+chmod -R 777 $PRESTOLOG
 
 cat << EOF > /opt/presto/$PRESTOVER/etc/node.properties
 node.environment=$ENVNAME
@@ -52,6 +53,6 @@ node.id=$NODEID
 node.data-dir=$PRESTOLOG
 EOF
 
-/opt/presto/$PRESTOVER/bin/launcher start
+su - uber -s/bin/bash -c "export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre;export PATH=$JAVA_HOME/bin:$PATH;/opt/presto/$PRESTOVER/bin/launcher start"
 
 rm -rf $TMP_DIR
